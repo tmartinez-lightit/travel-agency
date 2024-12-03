@@ -6,7 +6,9 @@ use Lightit\Backoffice\Users\App\Controllers\DeleteUserController;
 use Lightit\Backoffice\Users\App\Controllers\GetUserController;
 use Lightit\Backoffice\Users\App\Controllers\ListUserController;
 use Lightit\Backoffice\Users\App\Controllers\StoreUserController;
-
+use Lightit\Cities\App\Controllers\ListCityController;
+use Lightit\Cities\App\Controllers\UpdateCityController;
+use Lightit\Cities\App\Controllers\DeleteCityController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,4 +36,17 @@ Route::prefix('users')
         Route::get('/{user}', GetUserController::class)->withTrashed();
         Route::post('/', StoreUserController::class);
         Route::delete('/{user}', DeleteUserController::class);
+    });
+
+/*
+|--------------------------------------------------------------------------
+| Cities Routes
+|--------------------------------------------------------------------------
+*/
+Route::prefix('cities')
+    ->middleware([])
+    ->group(static function () {
+        Route::get('/', ListCityController::class);
+        Route::put('/{city}', UpdateCityController::class);
+        Route::delete('/{city}', DeleteCityController::class);
     });
