@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lightit\Cities\App\Controllers;
+namespace Lightit\Cities\App\Controllers\City;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
